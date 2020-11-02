@@ -12,7 +12,6 @@ chai.use(chaiHttp);
 
 describe('Users', () => {
     beforeEach((done) => { //Before each test we empty the database
-        console.log("Done");
         done();
         // User.deleteMany({}, (err,res) => {
         //    done();
@@ -30,10 +29,10 @@ describe('Users', () => {
           chai.request(API)
               .get('/users')
               .end((err, res) => {
-                    //console.log("res :: ",res);
+                    console.log("res :: ",res);
                     res.should.have.status(200);
                     res.body.should.be.a('array');
-                    res.body.length.should.be.eql(4);
+                    res.body.length.should.be.eql(1);
                 done();
               });
         });

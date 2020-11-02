@@ -9,7 +9,7 @@ const MongoosePlugin = {
   name: 'MongoosePlugin',
   pkg: require('../package.json'),
   register: function (server, options) {
-    Mongoose.connect(DEV_URI, {
+    Mongoose.connect(TEST_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
